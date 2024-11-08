@@ -1,14 +1,14 @@
 class Person {
     //diese informationen will ich immer haben. Das sind die Grunddaten in meiner "Mutter"-class
-    Vorname;
-    Nachname;
+    vorname;
+    nachname;
 
     constructor(firstNameParam, lastNameParam) {
-        this.Vorname = firstNameParam;
-        this.Nachname = lastNameParam;
+        this.vorname = firstNameParam;
+        this.nachname = lastNameParam;
     }
     showFullName() {
-        console.log(`Das ist ${this.Vorname} ${this.Nachname} aus ${this.ort}. Er/Sie ist ${this.alter} Jahre jung.`);
+        console.log(`Das ist ${this.vorname} ${this.nachname} aus ${this.ort}. Er/Sie ist ${this.alter} Jahre jung.`);
     }
 }
 

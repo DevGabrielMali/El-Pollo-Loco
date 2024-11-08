@@ -61,17 +61,14 @@
 let contacts = [];
 
 class Contact extends Person {
-    vorname;
-    nachname;
     alter;
     ort;
 
     constructor(firstNameParam, lastNameParam, ageParam, adressParam) {
-        super(firstNameParam, lastNameParam, ageParam, adressParam);
+        super(firstNameParam, lastNameParam);
         this.alter = ageParam;
         this.ort = adressParam;
     }
-
     showFullName() {
         console.log(`Das ist ${this.vorname} ${this.nachname} aus ${this.ort}. Er/Sie ist ${this.alter} Jahre jung.`);
     }
@@ -80,7 +77,11 @@ class Contact extends Person {
 function addContact(firstNameParam, lastNameParam, ageParam, adressParam) {
     let myContact = new Contact(firstNameParam, lastNameParam, ageParam, adressParam);
     contacts.push(myContact);
+    myContact.showFullName();
+    
 }
 
-addContact('Peter', 'Maier', 22, 'Berlin');
-addContact('Maria', 'Hammer', 40, 'Hamburg');
+addContact('Peter', 'Maier', 22, 'Paderborn')
+addContact('Markus', 'Maier', 30, 'Paderborn')
+addContact('Michael', 'Maier', 15, 'Paderborn')
+addContact('Siegfried', 'Maier', 53, 'Paderborn')

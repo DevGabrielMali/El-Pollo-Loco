@@ -1,27 +1,4 @@
-let contacts = [];
 
-// Das hier beschreibt wie ein Objekt aussehen soll.
-// Vorlage
-// Schablone
-class Contact {
-  Vorname;
-  Nachname;
-  Alter;
-  Adresse;
-}
-
-function addContact(firstName, lastName, age, adress) {
-  let myContact = new Contact();
-  myContact["Vorname"] = firstName;
-  myContact["Nachname"] = lastName;
-  myContact["Alter"] = age;
-  myContact["Adresse"] = adress;
-  contacts.push(myContact);
-  //   debugger;
-}
-
-addContact("Gabriel", "Mali", 33, "Spielstraße");
-addContact("Peter", "Maffay", 22, "Maffayweg");
 
 let zoo = [];
 
@@ -40,9 +17,7 @@ function addZebra(size, age) {
 addZebra("2,20m", "7 Years");
 // console.log(zoo);
 
-
 //
-
 
 // let cars = [];
 
@@ -56,7 +31,7 @@ addZebra("2,20m", "7 Years");
 //     this.model = model;
 //     this.hp = hp;
 //     console.log('You got a new connection, G!');
-    
+
 //   }
 // }
 
@@ -70,63 +45,70 @@ addZebra("2,20m", "7 Years");
 // addCars("BMW", "530d e39", 193);
 // addCars("BMW", "M3 e46", 343);
 
-
-
-
-
-
-
-
 let cars = [];
 
 // class bedeutet soviel wie "Anleitung"
 class Car {
-    // eigenschaften die wir zwingend benötigen/haben wollen
-    brand;
-    series;
-    hp;
+  // eigenschaften die wir zwingend benötigen/haben wollen
+  brand;
+  series;
+  hp;
 
-    // der constructor ist sowas wie ein klugscheisser der genau weiß wie das zu erledigen ist. er merkt sich die infos und gibt sie weiter
-    constructor(brandParam, seriesParam, hpParam){
-        this.brand = brandParam;
-        this.series = seriesParam;
-        this.hp = hpParam;
-    }
+  // der constructor ist sowas wie ein klugscheisser der genau weiß wie das zu erledigen ist. er merkt sich die infos und gibt sie weiter
+  constructor(brandParam, seriesParam, hpParam) {
+    this.brand = brandParam;
+    this.series = seriesParam;
+    this.hp = hpParam;
+  }
 }
 
-function addCars(brandParam, seriesParam, hpParam){
-    let newCars = new Car(brandParam, seriesParam, hpParam)
-    cars.push(newCars)
-    console.log(newCars);
+function addCars(brandParam, seriesParam, hpParam) {
+  let newCars = new Car(brandParam, seriesParam, hpParam);
+  cars.push(newCars);
+  console.log(newCars);
 }
 
-addCars('BMW', '530D', 193)
-addCars('Benz', 'S600', 500)
-
-
-
-
-
-
-
-
+addCars("BMW", "530D", 193);
+addCars("Benz", "S600", 500);
 
 let schuhe = [];
 
 class eigenschaften {
-    material;
-    farbe;
+  material;
+  farbe;
 
-    constructor(material, farbe) {
-        this.material = material;
-        this.farbe = farbe;
-    }
+  constructor(material, farbe) {
+    this.material = material;
+    this.farbe = farbe;
+  }
 }
 
 function addShoes(material, farbe) {
-    let myDeichmann = new eigenschaften(material, farbe);
-    schuhe.push(myDeichmann);
-    console.log(myDeichmann);
+  let myDeichmann = new eigenschaften(material, farbe);
+  schuhe.push(myDeichmann);
+  console.log(myDeichmann);
 }
 
-addShoes('leder', 'AllBlackEverythaaaang')
+addShoes("leder", "AllBlackEverythaaaang");
+
+let pc = [];
+
+class hardware {
+  RAM;
+  SSD;
+  CPU;
+
+  constructor(RAM, SSD, CPU) {
+    this.RAM = RAM;
+    this.SSD = SSD;
+    this.CPU = CPU;
+  }
+}
+
+function addHardware(RAM, SSD, CPU) {
+  let myPc = new hardware(RAM, SSD, CPU);
+  pc.push(myPc);
+  console.log(myPc);
+}
+
+addHardware("32GB", "1TB", "i5");

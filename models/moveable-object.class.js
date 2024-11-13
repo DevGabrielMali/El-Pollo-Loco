@@ -5,6 +5,7 @@ class MoveableObject {
   height = 400;
   width = 200;
   imageCache = {};
+  currentImage = 0;
 
   loadImage(path) {
     this.img = new Image(); // Image ist ein bestehendes element in JavaScript. gleichzusetzen mit dem <img id="image"> + this.img = document.getElementById('image')

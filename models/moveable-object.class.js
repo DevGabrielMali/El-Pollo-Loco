@@ -6,6 +6,7 @@ class MoveableObject {
   width = 200;
   imageCache = {};
   currentImage = 0;
+  speed = 0.2;
 
   loadImage(path) {
     this.img = new Image(); // Image ist ein bestehendes element in JavaScript. gleichzusetzen mit dem <img id="image"> + this.img = document.getElementById('image')
@@ -28,5 +29,9 @@ class MoveableObject {
     console.log("Move Bitch");
   }
 
-  moveLeft() {}
+  moveLeft() {
+    setInterval( () => {
+        this.x -= this.speed; // Bestimmt das Tempo der Wolken
+    }, 1000 / 60); // 60 Frames pro Sekunde (1000 = 1 sek)
+}
 }

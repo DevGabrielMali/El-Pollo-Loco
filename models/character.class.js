@@ -1,4 +1,7 @@
 class Character extends MoveableObject {
+
+    speed = 5;
+
   IMAGES_WALKING = [
     "img/2_character_pepe/2_walk/W-21.png",
     "img/2_character_pepe/2_walk/W-22.png",
@@ -17,14 +20,32 @@ class Character extends MoveableObject {
   }
 
   animate() {
+
     setInterval(() => {
-      if (this.world.keyboard.RIGHT) {
+
+        // hiermit bewegt sich unser character
+        if (this.world.keyboard.RIGHT) {
+            this.x += this.speed
+        }
+
+        if (this.world.keyboard.LEFT) {
+            this.x -= this.speed
+        }
+    }, 1500 / 60);
+
+
+    setInterval(() => {
+
+        // mit dem || wird gesagt, entweder rechts oder links
+      if (this.world.keyboard.RIGHT || this.world.keyboard.LEFT) {
+
+        // hier wird das laufen animiert (ist aber noch an der selben x stelle fixiert)
         let i = this.currentImage % this.IMAGES_WALKING.length; // % funktioniert ähnlich wie ein loop in kombination mit xxx.length
         let path = this.IMAGES_WALKING[i];
         this.img = this.imageCache[path];
         this.currentImage++;
       }
-    }, 100);
+    }, 50);
   }
 
   jump() {}

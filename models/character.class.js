@@ -46,12 +46,7 @@ class Character extends MoveableObject {
 
         // mit dem || wird gesagt, entweder rechts oder links
       if (this.world.keyboard.RIGHT || this.world.keyboard.LEFT) {
-
-        // hier wird das laufen animiert (ist aber noch an der selben x stelle fixiert)
-        let i = this.currentImage % this.IMAGES_WALKING.length; // % funktioniert ähnlich wie ein loop in kombination mit xxx.length
-        let path = this.IMAGES_WALKING[i];
-        this.img = this.imageCache[path];
-        this.currentImage++;
+        this.playAnimation(this.IMAGES_WALKING);
       }
     }, 50);
   }

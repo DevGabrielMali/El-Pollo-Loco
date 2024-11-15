@@ -26,6 +26,14 @@ class MoveableObject {
     });
   }
 
+  playAnimation(images){
+            // hier wird das laufen animiert (ist aber noch an der selben x stelle fixiert)
+            let i = this.currentImage % this.IMAGES_WALKING.length; // % funktioniert ähnlich wie ein loop in kombination mit xxx.length
+            let path = images[i];
+            this.img = this.imageCache[path];
+            this.currentImage++;
+  }
+
   moveRight() {
     console.log("Move Bitch");
   }

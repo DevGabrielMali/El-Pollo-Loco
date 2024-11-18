@@ -52,12 +52,11 @@ class MoveableObject {
   }
 
   moveRight() {
-    console.log("Move Bitch");
+    this.x += this.speed;
   }
 
   moveLeft() {
-    setInterval(() => {
-      this.x -= this.speed; // Bestimmt das Tempo der Wolken
-    }, 1000 / 60); // 60 Frames pro Sekunde (1000 = 1 sek)
+
+      this.x -= this.speed;
   }
 }

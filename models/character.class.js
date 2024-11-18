@@ -42,21 +42,21 @@ class Character extends MoveableObject {
     setInterval(() => {
       // hiermit bewegt sich unser character
       if (this.world.keyboard.RIGHT && this.x < this.world.level.level_end_x) {
-        this.x += this.speed;
         this.otherDirection = false;
-        this.walking_sound.play();
-        this.walking_sound.playbackRate = this.speed / 1.5; // Passe die Geschwindigkeit an
+       this.moveRight();
+       this.walking_sound.play();
+       this.walking_sound.playbackRate = this.speed / 1.5; // Passe die Geschwindigkeit an
       }
 
       if (this.world.keyboard.LEFT && this.x > 0) {
-        this.x -= this.speed;
-        this.otherDirection = true;
+        this.otherDirection = true; // Bestimmt das Tempo
+        this.moveLeft();
         this.walking_sound.play();
         this.walking_sound.playbackRate = this.speed / 1.5; // Passe die Geschwindigkeit an
       }
 
-      if (this.world.keyboard.SPACE) {
-        this.speedY = 20;
+      if (this.world.keyboard.SPACE && !this.isAboveGround()) {
+        this.jump();
       }
 
       this.world.camera_x = -this.x + 100;
@@ -74,5 +74,7 @@ class Character extends MoveableObject {
     }, 25);
   }
 
-  jump() {}
+  jump() {
+    this.speedY = 35;
+  }
 }

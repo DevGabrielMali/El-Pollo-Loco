@@ -13,7 +13,7 @@ class MoveableObject {
 
   applyGravity() {
     setInterval(() => {
-      if (this.isAboveGround()) {
+      if (this.isAboveGround() || this.speedY > 0) {
         this.y -= this.speedY;
         this.speedY -= this.acceleration;
       }
@@ -21,11 +21,11 @@ class MoveableObject {
   }
 
   isAboveGround(){
-    return this.y < 250;
+    return this.y < 250; // assuming the ground is at y = 250
   }
 
   loadImage(path) {
-    this.img = new Image(); // Image ist ein bestehendes element in JavaScript. gleichzusetzen mit dem <img id="image"> + this.img = document.getElementById('image')
+    this.img = new Image(); // Image() ist ein bestehendes element in JavaScript. gleichzusetzen mit dem <img id="image"> + this.img = document.getElementById('image')
     this.img.src = path;
   }
 
